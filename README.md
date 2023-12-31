@@ -1,62 +1,71 @@
 # vue-farsify
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue 3 toolkit for Persian localization, including utilities and directives for number conversion and more. Designed to integrate seamlessly with Vue 3 projects, `vue-farsify` provides developers with an easy way to handle Persian-specific data manipulation.
 
-## Recommended IDE Setup
+## Directives
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Included in this toolkit is the vConvertNumbers directive, which provides real-time number conversion within your Vue templates.
 
-## Type Support for `.vue` Imports in TS
+## Usage of `vConvertNumbers`
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Apply the directive in your template by specifying the desired language conversion:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+```vue
+<!-- Convert to Persian numbers -->
+<input v-convert-numbers:persian>
 
-1. Disable the built-in TypeScript Extension
-    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+<!-- Convert to Arabic numbers -->
+<input v-convert-numbers:arabic>
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+<!-- Convert to English numbers -->
+<input v-convert-numbers:english>
+```
 
 ## Project Setup
 
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
+Install dependencies:
 
 ```sh
-pnpm dev
+yarn install
 ```
 
-### Type-Check, Compile and Minify for Production
+Compile and hot-reload for development:
 
 ```sh
-pnpm build
+yarn install
 ```
 
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
+Run unit tests developed with Jest:
 
 ```sh
-pnpm test:unit:dev # or `pnpm test:unit` for headless testing
+yarn test:unit
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Run end-to-end tests with Cypress:
 
 ```sh
-pnpm test:e2e:dev
+yarn test:e2e
 ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Contributing
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+Contributions are welcome! If you've got an idea for a new feature or an improvement, we'd love to hear about it. You can contribute by adding new utilities, improving existing tools, or writing documentation.
 
-```sh
-pnpm build
-pnpm test:e2e
-```
+### To get started:
+
+- Fork the repository.
+- Create a feature branch (git checkout -b feature/amazing-feature).
+- Commit your changes (git commit -am 'Add some amazing feature').
+- Push to the branch (git push origin feature/amazing-feature).
+- Open a Pull Request.
+
+## Adding New Tools or Directives
+
+- Develop your utility or directive in the src/utility or src/directives directory.
+- Ensure you include unit tests for your new feature.
+- Document the usage of your utility or directive in the README.
+- Follow the coding conventions established in the project.
+
+Remember to keep your PRs concise and focused. They should only contain one feature or fix per PR.
+
+Thank you for making `vue-farsify` even better!
