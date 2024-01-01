@@ -1,4 +1,4 @@
-name: Automated Release
+name: Release
 
 on:
   push:
@@ -7,16 +7,10 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    name: "Release"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Create Release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
