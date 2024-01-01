@@ -3973,6 +3973,14 @@ vite@^5.0.10:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vue-farsify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-farsify/-/vue-farsify-1.0.0.tgz#688feba20a8ce6b88597fa46077a90fa2bce08cf"
+  integrity sha512-7Lrw+dpT9m7vVUM/JEmIFDsOkXWISFotMVB2I4Ng2FTMUV6fiCjgV8IOZDtg7I05PRJVsJUaeLvEKzNPr6iLtA==
+  dependencies:
+    vue "^3.4.3"
+    vue-router "^4.2.5"
+
 vue-router@^4.2.5:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.2.5.tgz#b9e3e08f1bd9ea363fdd173032620bc50cf0e98a"
