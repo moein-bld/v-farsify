@@ -1,5 +1,5 @@
 import type { DirectiveBinding } from 'vue';
-import type { NumberConverter, AllowedArgs } from '@/dto/ConvertNumbers/convert-numbers.dto';
+import type { NumberConverter, AllowedArgs } from '@/types/ConvertNumbers/convert-numbers';
 import { toPersianNumbers, toEnglishNumbers, toArabicNumbers } from '@/utility/ConvertNumbers/ConvertNumbers';
 
 /**
