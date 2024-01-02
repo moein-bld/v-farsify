@@ -1,6 +1,6 @@
 import type { DirectiveBinding } from 'vue';
-import type { NumberConverter, AllowedArgs } from '@/dto/convert-numbers.dto';
-import { toPersianNumbers, toEnglishNumbers, toArabicNumbers } from '@/utility/ConvertNumbers';
+import type { NumberConverter, AllowedArgs } from '@/dto/ConvertNumbers/convert-numbers.dto';
+import { toPersianNumbers, toEnglishNumbers, toArabicNumbers } from '@/utility/ConvertNumbers/ConvertNumbers';
 
 /**
  * Custom directive to convert numbers between different numeral systems.
