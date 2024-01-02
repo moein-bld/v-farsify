@@ -3,14 +3,20 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*' # This will trigger the workflow for any tags starting with 'v'
 
 jobs:
   release:
-    name: "Release"
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Create Release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: true
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
