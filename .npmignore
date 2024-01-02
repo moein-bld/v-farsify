@@ -7,3 +7,7 @@ tsconfig.app.json
 tsconfig.cypress-ct.json
 tsconfig.json
 tsconfig.node.json
+tsconfig.node.tsbuildinfo
+
+dist/tsconfig.app.tsbuildinfo
+dist/tsconfig.cypress-ct.tsbuildinfo

@@ -1,4 +1,4 @@
-import { toEnglishNumbers, toPersianNumbers, toArabicNumbers } from './ConvertNumbers';
+import { toEnglishNumbers, toPersianNumbers, toArabicNumbers } from '../../src/utility/ConvertNumbers/ConvertNumbers';
 
 describe('Number Conversion Utilities', () => {
 	test('toEnglishNumbers converts Arabic and Persian numbers to English', () => {
