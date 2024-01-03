@@ -10,11 +10,8 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
+    "build": "vite build && vue-tsc --emitDeclarationOnly -p tsconfig.app.json",
     "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --emitDeclarationOnly -p tsconfig.app.json",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "clean": "prettier --write ."
   },
