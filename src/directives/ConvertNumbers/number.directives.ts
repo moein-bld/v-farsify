@@ -8,7 +8,7 @@ import { toPersianNumbers, toEnglishNumbers, toArabicNumbers } from '@/utility/C
  */
 
 // Directive for converting numbers to a specified language
-const vConvertNumbers = {
+export const vConvertNumbers = {
 	beforeMount(el: HTMLElement, binding: DirectiveBinding<AllowedArgs>) {
 		const arg = binding.arg;
 		if (!arg || !converters.hasOwnProperty(arg)) {
@@ -52,5 +52,3 @@ const converters: Record<AllowedArgs, NumberConverter> = {
 	persian: toPersianNumbers,
 	arabic: toArabicNumbers,
 };
-
-export { vConvertNumbers };
