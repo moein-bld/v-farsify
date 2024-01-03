@@ -15,7 +15,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "composite": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "types": ["node"]
