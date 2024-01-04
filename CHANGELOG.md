@@ -1,4 +1,4 @@
-# vue-farsify
+# v-farsify
 
 
 ## [Unreleased]
