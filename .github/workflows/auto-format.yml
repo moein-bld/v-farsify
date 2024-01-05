@@ -31,4 +31,5 @@ jobs:
                   git config --global user.email 'action@github.com'
                   git add -A
                   git commit -m "Automated formatting changes"
-                  git push origin HEAD:${{ github.event.pull_request.head.ref || 'master' }}
+                  git pull --rebase origin ${{ github.head_ref }} # Rebase local changes on top of the remote branch
+                  git push --force-with-lease origin HEAD:${{ github.head_ref }} # Safely force push your changes
