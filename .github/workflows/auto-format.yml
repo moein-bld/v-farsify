@@ -9,19 +9,26 @@ jobs:
     format:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - name: Checkout the branch
+              uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
-            - name: prettier
+                  fetch-depth: 0 # fetch all history for all tags and branches
+
+            - name: Run prettier
               run: npx prettier --write .
+
             - name: Check for modified files
               id: git-check
-              run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
-            - name: Push changes
+              run: |
+                  git diff --quiet || echo "::set-output name=modified::true"
+                  echo "modified=${{ steps.git-check.outputs.modified }}"
+
+            - name: Commit and push if changes
               if: steps.git-check.outputs.modified == 'true'
               run: |
-                  git config --global user.name 'Peter Evans'
-                  git config --global user.email 'peter-evans@users.noreply.github.com'
-                  git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-                  git commit -am "Automated changes"
-                  git push
+                  git config --global user.name 'GitHub Action'
+                  git config --global user.email 'action@github.com'
+                  git add -A
+                  git commit -m "Automated formatting changes"
+                  git push origin HEAD:${{ github.event.pull_request.head.ref || 'master' }}
