@@ -1,0 +1,7 @@
+# Ignore artifacts:
+.github
+.vscode
+pnpm-lock.yaml
+pnpm-workspace.yaml
+node_modules
+dist

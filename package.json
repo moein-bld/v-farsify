@@ -1,0 +1,41 @@
+{
+    "name": "v-farsify",
+    "version": "0.0.7",
+    "description": "A Vue.js utility and directive for Persian language support.",
+    "author": "moein-bld <moein.bolidhe82@gmail.com>",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "lint": "eslint .",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^6.17.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.2",
+        "eslint-plugin-vue": "^9.19.2",
+        "prettier": "^3.1.1"
+    },
+    "engines": {
+        "node": "^20 || ^18",
+        "pnpm": ">= 8.12.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/moein-bld/vue-farsify.git"
+    },
+    "homepage": "https://github.com/moein-bld/vue-farsify",
+    "keywords": [
+        "vue",
+        "persian",
+        "vue persian",
+        "v-farsify",
+        "vue3",
+        "number conversion",
+        "persian tools",
+        "vue plugin",
+        "vue directive"
+    ]
+}
