@@ -24,12 +24,8 @@ export const vConvertNumbers = {
 		} else {
 			// Find the first input element within the element
 			const foundInputElement = el.querySelector('input');
-			if (foundInputElement) {
-				inputElement = foundInputElement as HTMLInputElement;
-			} else {
-				// Exit if no input element is found
-				return;
-			}
+			if (!foundInputElement) return;
+			inputElement = foundInputElement as HTMLInputElement;
 		}
 
 		// Safely access binding.arg after checking it's not undefined
