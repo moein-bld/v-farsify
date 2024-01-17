@@ -1,35 +1,13 @@
 name: auto-format
+
 on:
-    pull_request:
-    push:
-        branches:
-            - master
-            - dev
+  pull_request: null
+  
 jobs:
-    format:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the branch
-              uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-                  fetch-depth: 0 # fetch all history for all tags and branches
-
-            - name: Run prettier
-              run: npx prettier --write .
-
-            - name: Check for modified files
-              id: git-check
-              run: |
-                  git diff --quiet || echo "::set-output name=modified::true"
-                  echo "modified=${{ steps.git-check.outputs.modified }}"
-
-            - name: Commit and push if changes
-              if: steps.git-check.outputs.modified == 'true'
-              run: |
-                  git config --global user.name 'GitHub Action'
-                  git config --global user.email 'action@github.com'
-                  git add -A
-                  git commit -m "Automated formatting changes"
-                  git pull --rebase origin ${{ github.head_ref }} # Rebase local changes on top of the remote branch
-                  git push --force-with-lease origin HEAD:${{ github.head_ref }} # Safely force push your changes
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the branch
+        uses: actions/checkout@v4
+      - name: Run linter check
+        run: echo "do your format checking here"
