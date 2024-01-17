@@ -9,5 +9,10 @@ jobs:
     steps:
       - name: Checkout the branch
         uses: actions/checkout@v4
-      - name: Run linter check
-        run: echo "do your format checking here"
+      - name: Run prettier
+        run: npx prettier --write .
+      - uses: tj-actions/verify-changed-files@v17
+        id: verify-changed-files
+        with:
+          fail-if-changed: 'true'
+          fail-message: 'Run linter before commit!'
